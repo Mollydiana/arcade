@@ -1,3 +1,4 @@
+
 /* -- custom css for Bootstrap 3.x --*/
 
 /* move special fonts to HTML head for better performance */
@@ -21,9 +22,6 @@ h1,h2,h3,h4,.lead,.btn,.navbar a {
   letter-spacing:2px;
 }
 
-h1 {
-  font-size:50px;
-}
 
 /* make images gray */
 img.grayscale {
@@ -63,7 +61,7 @@ img.grayscale {
    border-color:#eeeeee;
    padding:15px;
    background-color:transparent;
-   color:#ffffff;
+   color: black;
 }
 
 .header .btn-lg:hover {
@@ -103,11 +101,13 @@ img.grayscale {
 .header .lead {
   color:#d46054;
   font-size:25px;
+
+
 }
 
 .header {
   height: 80%;
-  background: #f68076 url('http://www.bootply.com/assets/example/pt_topo_l.png') repeat center center fixed;
+  background: #f68076 url('http://www.343industries.org/forum/uploads/53ac8fa52041db8153e0433a12c7c2a4.jpg') repeat center center fixed;
 }
 
 /* use alt in navbar and header for different color */
@@ -117,7 +117,8 @@ img.grayscale {
 }
 
 .alt .lead {
-  color: #3B0496;
+  color: #ffffff;
+
 }
 
 .alt.affix {
@@ -125,7 +126,7 @@ img.grayscale {
 }
 
 .alt li a:hover, .alt li.active {
-  background-color:#5D17BA;
+  background: image(ar);
 }
 
 
@@ -140,7 +141,7 @@ img.grayscale {
 }
 
 .bright {
-  background: #dbdbdb url('http://www.bootply.com/assets/example/pt_topo.png') repeat center center fixed;
+  background: #dbdbdb url('http://www.343industries.org/forum/uploads/53ac8fa52041db8153e0433a12c7c2a4.jpg') repeat center center fixed;
   color:#777;
 }
 
@@ -175,7 +176,7 @@ img.grayscale {
   padding-top:7%;
   height: 100%;
   width: 100%;
-  background: url('http://www.bootply.com/assets/example/bg_suburb.jpg') no-repeat center center fixed;
+  background: url('http://www.343industries.org/forum/uploads/53ac8fa52041db8153e0433a12c7c2a4.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -199,4 +200,24 @@ footer {
   padding: 100px 0;
 }
 
-/* -- end custom css for Bootstrap 3.x --*/
+#arcadeSpan {
+    background-color: black;
+    opacity: 0.8;
+}
+
+
+h1 {
+  font-size:50px;
+  color: #ffffff;
+
+}
+
+#middleInfo {
+    padding: 100px ;
+}
+
+#footer {
+    background-color: black;
+
+}
+

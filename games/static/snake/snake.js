@@ -6,7 +6,7 @@ $(document).ready(function () {
     var width = $("#canvas").width();
     var height = $("#canvas").height();
 
-    var cellWidth = 10;
+    var cellWidth = 20;
     var currentDirection;
     var food;
     var score;
