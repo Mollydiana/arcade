@@ -1,0 +1,10 @@
+body {
+    background-color: olivedrab;
+}
+
+button#start_game {
+    height: 150px;
+    width: 250px;
+    background-color: yellow;
+    font-size: 30px;
+}

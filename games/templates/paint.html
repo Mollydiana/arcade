@@ -1,0 +1,29 @@
+{% load static %}
+<!doctype html>
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="{% static 'paint/paint.js' %}"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'paint/paint.css' %}">
+    </head>
+    <body>
+        <h1>Paint</h1>
+        <div id="colors"></div>
+        <div id="color_form">
+            <input type="text" id="color_field">
+            <button id="add_color">Add color</button>
+            <button id="eraser">Eraser</button>
+            <button id="background">Change background</button>
+            <input type="radio" name="size" value="5" checked> 5
+            <input type="radio" name="size" value="10"> 10
+            <input type="radio" name="size" value="15"> 15
+
+        </div>
+        <div id="image_form">
+        </div>
+        <div id="images"></div>
+        <canvas width="500" height="300"></canvas><br>
+        <button id="reset">Reset</button>
+    </body>
+</html>
+
