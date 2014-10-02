@@ -33,7 +33,12 @@
         <li><a href="{% url 'paint' %}">Paint</a></li>
         <li><a href="{% url 'snake' %}">Snake</a></li>
         <li><a href="#sec3">Quiz</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'logout' %}">Logout</a></li>
+        {% else %}
+        <li><a href="{% url 'login' %}">Login</a>
         <li><a href="{% url 'register' %}">Register</a></li>
+        {% endif %}
       </ul>
     </div>
    </div>
@@ -45,7 +50,7 @@
     <h1><span id="arcadeSpan">Molly's Arcade</span></h1>
       <p class="lead">The craziest, wildest, most fun arcade you've evvvvver played in...</p>
       <div>&nbsp;</div>
-      <a href="{% static 'register' %}" class="btn btn-default btn-lg">Start Playing!</a>
+      <a href="{% url 'register' %}" class="btn btn-default btn-lg">Start Playing!</a>
   </div>
 </div>
 

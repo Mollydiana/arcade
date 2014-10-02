@@ -56,7 +56,7 @@ $(document).ready(function () {
     }
 
     function gameOver() {
-        $('#start_game').text("Play Again?");
+        $('#start_game').text("Play Again");
         clearInterval(gameLoopInterval);
 
     }
@@ -148,15 +148,15 @@ $(document).ready(function () {
         // Paint the snake body
         for (var i = 0; i < snakeBody.length; i++) {
             var cell = snakeBody[i];
-            paintCell(cell.x, cell.y, "#0066FF", "#FF3300");
+            paintCell(cell.x, cell.y, "#0066FF", "#black");
         }
 
         // Paint the food
-        paintCell(food.x, food.y, "#FF3300", "#0066FF");
+        paintCell(food.x, food.y, "#000000", "#black");
 
         // Paint the score text
         var scoreText = "Score: " + score;
-        canvasContext.fillText(scoreText, 5, height - 5);
+        canvasContext.fillText(scoreText, 12, height - 12);
     }
 
     //Lets first create a generic function to paint cells

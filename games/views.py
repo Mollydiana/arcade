@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from games.forms import EmailUserCreationForm
 
@@ -18,7 +19,7 @@ def register(request):
         form = EmailUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("profile")
+            return redirect("home.html")
     else:
         form = EmailUserCreationForm()
 
@@ -27,3 +28,13 @@ def register(request):
     return render(request, "registration/register.html", {
         'form': form,
     })
+
+def logout(request):
+    return render(request, 'registration/logout.html')
+
+@login_required
+def profile(request):
+    if not request.user.is_authenticated():
+        return redirect("login")
+
+    return render(request, 'registration/profile.html', {})
