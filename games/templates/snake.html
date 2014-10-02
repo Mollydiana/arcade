@@ -1,23 +1,28 @@
+{% extends 'base_template.html' %}
 {% load staticfiles %}
-<!DOCTYPE html>
-<html>
+
+  {% block content %}
     <head>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
         <script src="{% static 'snake/snake.js' %}" type="text/javascript"></script>
         <link rel="stylesheet" type="text/css" href="{% static 'snake/snake.css' %}">
     </head>
+
     <body>
+
     <div>
-    <br><button id="start_game">Start Game!</button>
-    <input type="text" id="enter_name">
-    <button id="add_name">Enter your name to record you score!</button></br>
+    <button id="start_game">Start Game!</button>
+    <br><input type="text" id="enter_name">
+    <button id="add_name">Enter your name</button></br>
 
             <canvas id="canvas" width="700" height="700"></canvas>
 
 
         </div>
+
     </body>
-</html>
+ {% endblock content %}
+
 
 
 

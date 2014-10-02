@@ -8,4 +8,7 @@ urlpatterns = patterns('',
     url(r'^snake/', 'games.views.snake', name='snake'),
 
     url(r'^admin/', include(admin.site.urls)),
+
+    url(r'^register/$', 'games.views.register', name='register'),
+    url(r'^login/$', 'django.contrib.auth.views.login', name='login')
 )

@@ -14,10 +14,9 @@ $(document).ready(function(){
         "#FFFF00", // yellow
         "#FF0000" // red
     ];
-    var currentColor;
+    
+    var currentColor = "#000000";
     var clickColor = [];
-
-
 
     var addColorBox = function(color){
         $('#colors').append(
@@ -57,51 +56,46 @@ $(document).ready(function(){
             currentColor = $(e.target).css('background-color');
         });
     };
-
-
-    var erase = function() {
-        $('#eraser').on('click', function(e){
-            currentColor = '#FFF';
-        });
-    };
-
-
-    var reset = function () {
-        $('#reset').on('click', function(){
-            context.clearRect(0,0, context.canvas.width, context.canvas.height);
-            clickX= [];
-            clickY = [];
-            clickDrag = [];
-        context.fillStyle = "white";
-        });
-    };
-
-
-    var background = function () {
-        $('button#background').on('click', function(){
-            context.clearRect(0,0, context.canvas.width, context.canvas.height);
-//            clickX= [];
-//            clickY = [];
-//            clickDrag = [];
-        context.fillStyle = selectColor();
-        });
-    };
-
+    
+	var clearCanvas = function(){
+		$('button#clearCanvas').on('click', function(){
+		context.clearRect(0,0,context.canvas.width, context.canvas.height);
+			clickX = [];
+			clickY = [];
+			clickDrag = [];
+            clickWidth = [];
+            clickColor = [];
+		context.fillStyle = "white";
+		});
+		};
+		
+	var background = function(){
+		$('button#changeBackground').on('click', function(){
+		context.clearRect(0,0,context.canvas.width, context.canvas.height);
+		context.fillStyle = selectColor;
+		});
+		};
+		
+	var erase = function() {
+		$('#erase').on('click', function(){
+			currentColor = '#FFF';
+			})};
+	
 
     var addClick = function(x, y, dragging){
+    	
         clickX.push(x);
         clickY.push(y);
         clickDrag.push(dragging);
         clickColor.push(currentColor);
-        clickWidth.push($('input[name="size"]:checked'.val()));
-
+        clickWidth.push($('input[name="size"]:checked').val());
     };
 
     var paint = function(){
         context.lineJoin = "round";
-
+     //    context.lineWidth = $('input[name="size"]:checked').val();
             
-        for (var i=0; i < clickX.length; i++) {
+        for (var i=0; i < clickX.length; i++) {        
             context.lineWidth = clickWidth[i];
             context.beginPath();
             // If a line was drawn, start from the spot before this
@@ -125,9 +119,9 @@ $(document).ready(function(){
     prepCanvas();
     addCustomColor();
     selectColor();
-    reset();
-    erase();
-    background();
+	clearCanvas();
+	erase();
+	background();
 
     // This represents the start of someone drawing
     $canvas.on('mousedown', function(e){
@@ -151,4 +145,13 @@ $(document).ready(function(){
     $canvas.on('mouseup', function(e){
         painting = false;
     });
+    
+	
+
+
+
+
+
+
+
 });

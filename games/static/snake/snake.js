@@ -56,6 +56,7 @@ $(document).ready(function () {
     }
 
     function gameOver() {
+        $('#start_game').text("Play Again?");
         clearInterval(gameLoopInterval);
 
     }
@@ -88,7 +89,7 @@ $(document).ready(function () {
         var nextPosition = {
             x: currentPosition.x,
             y: currentPosition.y
-        }
+        };
 
         // Increment the x or y value depending on what direction the snake is going
         if (currentDirection == "right") nextPosition.x++;
@@ -147,11 +148,11 @@ $(document).ready(function () {
         // Paint the snake body
         for (var i = 0; i < snakeBody.length; i++) {
             var cell = snakeBody[i];
-            paintCell(cell.x, cell.y);
+            paintCell(cell.x, cell.y, "#0066FF", "#FF3300");
         }
 
         // Paint the food
-        paintCell(food.x, food.y);
+        paintCell(food.x, food.y, "#FF3300", "#0066FF");
 
         // Paint the score text
         var scoreText = "Score: " + score;
@@ -159,10 +160,10 @@ $(document).ready(function () {
     }
 
     //Lets first create a generic function to paint cells
-    function paintCell(x, y) {
-        canvasContext.fillStyle = "black";
+    function paintCell(x, y, inner, outer) {
+        canvasContext.fillStyle = inner;
         canvasContext.fillRect(x * cellWidth, y * cellWidth, cellWidth, cellWidth);
-        canvasContext.strokeStyle = "white";
+        canvasContext.strokeStyle = outer;
         canvasContext.strokeRect(x * cellWidth, y * cellWidth, cellWidth, cellWidth);
     }
 
@@ -181,7 +182,11 @@ $(document).ready(function () {
     // Actually start the game
     $('button#start_game').on('click', function() {
         startGame();
-    })
+    });
+    canvasContext.fillStyle = "white";
+    canvasContext.fillRect(0, 0, width, height);
+    canvasContext.strokeStyle = "black";
+    canvasContext.strokeRect(0, 0, width, height);
 });
 
 

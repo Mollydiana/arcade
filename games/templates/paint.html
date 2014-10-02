@@ -1,6 +1,6 @@
+{% extends 'base_template.html' %}
 {% load static %}
-<!doctype html>
-<html>
+{% block content %}
     <head>
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="{% static 'paint/paint.js' %}"></script>
@@ -12,18 +12,21 @@
         <div id="color_form">
             <input type="text" id="color_field">
             <button id="add_color">Add color</button>
-            <button id="eraser">Eraser</button>
-            <button id="background">Change background</button>
-            <input type="radio" name="size" value="5" checked> 5
-            <input type="radio" name="size" value="10"> 10
-            <input type="radio" name="size" value="15"> 15
-
+            <button id="erase"> Erase</button>
+            <input type="radio" name="size" value=" 5 " checked > 5
+            <input type="radio" name="size" value=" 10 "> 10
+            <input type="radio" name="size" value=" 15 "> 15
+            <input type="radio" name="size" value=" 20 " > 20
+{#            <button id="changeBackground">Change background</button>#}
         </div>
         <div id="image_form">
         </div>
         <div id="images"></div>
-        <canvas width="500" height="300"></canvas><br>
-        <button id="reset">Reset</button>
+        <canvas id="canvas" width="500" height="300"></canvas>
+
+        <button id="clearCanvas"> Reset</button>
     </body>
+
+{% endblock content %}
 </html>
 
